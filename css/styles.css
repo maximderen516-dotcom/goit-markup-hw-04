@@ -122,6 +122,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+   gap:40px;
 }
 .header-logo{
     margin-right: 76px;
@@ -135,7 +136,7 @@ body {
     display:flex;
     gap:40px;
 }
-.logo{
+.logo {
     color:#2e2f42;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -191,7 +192,7 @@ body {
 .color-link-header.active::after {
     width: 100%;
 }
-.address-link{
+.address-link a{
     padding-right: 15px;
     padding-bottom: 24px;
     padding-top: 24px;
