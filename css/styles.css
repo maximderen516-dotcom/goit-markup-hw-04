@@ -86,7 +86,7 @@ h2 {
   color: var(--navy-blue);
 }
 h3 {
-  text-align: left;
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -94,6 +94,7 @@ h3 {
   color: #2e2f42;
 }
 p {
+  text-align: center;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -112,15 +113,16 @@ body {
 /* Region Header */
 .section-header {
   background-color: #fff;
+  padding-top: 24px;
 }
 .container {
   margin-left: auto;
   margin-right: auto;
   padding-right: 15px;
+  padding-left: 15px;
   max-width: 1158px;
 }
 .header-box {
-  padding-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -132,13 +134,11 @@ body {
 .header-nav {
   display: flex;
   gap: 40px;
+  padding-bottom: 24px;
+  padding-top: 24px;
 }
 .position-nav {
   margin-left: 76px;
-}
-address {
-  display: flex;
-  gap: 40px;
 }
 .logo {
   color: #2e2f42;
@@ -149,9 +149,8 @@ address {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
-  padding-left: 15px;
   padding-bottom: 24px;
-  /* padding-top: 24px; */
+  padding-top: 24px;
 }
 .color-slate-logo {
   font-family: var(--second-family);
@@ -163,6 +162,7 @@ address {
   color: var(--iris);
 }
 .color-link-header {
+  padding-top: 24px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -197,9 +197,11 @@ address {
   width: 100%;
 }
 .address-link a {
+  display: flex;
+  gap: 40px;
   padding-right: 15px;
   padding-bottom: 24px;
-  /* padding-top: 24px; */
+  padding-top: 24px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -217,16 +219,20 @@ address {
 .hero {
   margin-top: 1px;
   padding-top: 188px;
-  padding-bottom: 292px;
-  text-align: justify;
+  text-align: center;
   background: var(--navy-blue);
 }
 .button {
-  display: block;
+  /* display: block; */
   margin: 48px auto 0 auto;
   border-radius: 4px;
-  width: 169px;
-  height: 56px;
+  padding: 16px 32px;
+  /* padding-bottom: 28px;
+  padding-top: 28px;
+  padding-right: 85px;
+  padding-left: 85px; */
+  /* width: 169px;
+  height: 56px; */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: var(--iris);
   font-family: 'Roboto', sans-serif;
@@ -235,6 +241,10 @@ address {
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--white);
+  border: none;
+}
+.position-button {
+  padding-bottom: 188px;
 }
 .button:hover,
 .button:focus {
@@ -265,22 +275,6 @@ address {
   padding-top: 120px;
   gap: 24px;
 }
-.feature-1 {
-  padding-left: 15px;
-  margin-right: 24px;
-}
-.feature-2 {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-.feature-3 {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-.feature-4 {
-  padding-right: 15px;
-  margin-left: 24px;
-}
 /* end of Features */
 /* region Teem */
 .section-team {
@@ -292,23 +286,29 @@ address {
   gap: 24px;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 120px;
 }
-.team-name {
+/* .team-name {
   text-align: center;
   padding-top: 33px;
   padding-bottom: 8px;
-}
+} */
 .team-background {
   background: #ffffff;
 }
-.team-position {
+.card-content {
   text-align: center;
+  padding-top: 33px;
   padding-bottom: 32px;
 }
+/* .team-position {
+  text-align: center;
+  padding-bottom: 32px;
+} */
 
 /* end of Team  */
 /* region portfolio  */
-#portfolio {
+.portfolio {
   background-color: #fff;
 }
 .section-title {
