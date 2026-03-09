@@ -17,11 +17,12 @@ dd {
   margin: 0;
   padding: 0;
 }
-*,
+/* В секції Our Portfolio без цеї властивості змінилось з 2 сток на 3 */
+/* *,
 ::after,
 ::before {
   box-sizing: content-box;
-}
+} */
 body {
   min-height: 100vh;
   line-height: 1.5;
@@ -113,10 +114,10 @@ body {
   background-color: #fff;
 }
 .container {
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-top: 24px;
-  padding-bottom: 24px;
   max-width: 1158px;
 }
 .header-box {
