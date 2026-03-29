@@ -139,15 +139,12 @@ header {
   gap: 40px;
 }
 .header-nav-list {
-  margin-left: 76px;
   display: flex;
   gap: 40px;
-  padding-bottom: 24px;
+}
+.nav-list-item {
   padding-top: 24px;
 }
-/* .position-nav {
-  margin-left: 76px;
-} */
 .logo {
   color: #2e2f42;
   font-family: 'Raleway', sans-serif;
@@ -170,7 +167,6 @@ header {
   color: var(--iris);
 }
 .color-link-header {
-  padding-top: 24px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -238,12 +234,6 @@ header {
   margin: 48px auto 0 auto;
   border-radius: 4px;
   padding: 16px 32px;
-  /* padding-bottom: 28px;
-  padding-top: 28px;
-  padding-right: 85px;
-  padding-left: 85px; */
-  /* width: 169px;
-  height: 56px; */
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: var(--iris);
   font-family: 'Roboto', sans-serif;
@@ -287,8 +277,7 @@ header {
   padding: 0;
   border-radius: 4px;
 }
-.feature-list-item h3 {
-  padding: 0 32px 8px 0;
+.feature-list-item {
   border-radius: 4px;
 }
 /* end of Features */
@@ -296,29 +285,24 @@ header {
 .section-team {
   background: var(--cloud);
   padding-bottom: 120px;
-  padding-top: 120px;
 }
 .team-list {
   gap: 24px;
   display: flex;
-  justify-content: space-between;
 }
-/* .team-name {
-  text-align: center;
-  padding-top: 33px;
-  padding-bottom: 8px;
-} */
 .team-background {
   background: #ffffff;
+}
+.img-team {
+  display: block;
 }
 .card-content {
   text-align: center;
   padding-top: 32px;
   padding-left: 16px;
   border-radius: 0 0 4px 4px;
-}
-.team-position {
   padding-bottom: 32px;
+}
 }
 /* end of Team  */
 /* region portfolio  */
