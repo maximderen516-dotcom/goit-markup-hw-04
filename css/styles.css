@@ -142,6 +142,7 @@ header {
   gap: 40px;
 }
 .nav-list-item {
+  padding-bottom: 24px;
   padding-top: 24px;
   display: block;
 }
@@ -267,7 +268,6 @@ header {
 }
 .feature-list {
   display: flex;
-  justify-content: space-between;
   padding-bottom: 120px;
   padding-top: 120px;
   gap: 24px;
@@ -313,6 +313,7 @@ header {
 .portfolio {
   background-color: #fff;
   padding-bottom: 120px;
+  padding-top: 120px;
 }
 .section-title {
   font-family: 'Roboto', sans-serif;
@@ -323,8 +324,17 @@ header {
   text-align: center;
   color: var(--navy-blue);
   /* margin-bottom: 72px; */
-  padding-bottom: 120px;
-  padding-top: 120px;
+  padding-bottom: 72px;
+}
+.section-title-portfolio {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--navy-blue);
+  padding-bottom: 72px;
 }
 .portfolio-list {
   display: flex;
@@ -355,7 +365,7 @@ header {
 .card-text {
   padding-left: 16px;
   padding-bottom: 32px;
-  padding-top: 8px;
+  margin-top: 8px;
 }
 .portfolio-list-border {
   border: none;
@@ -367,6 +377,7 @@ header {
   border-left: 1px solid var(--cornflower);
   border-bottom: 1px solid var(--cornflower);
   border-right: 1px solid var(--cornflower);
+  padding: 32px 16px;
 }
 /* end of portfolio   */
 .footer {
