@@ -17,12 +17,6 @@ dd {
   margin: 0;
   padding: 0;
 }
-/* В секції Our Portfolio без цеї властивості змінилось з 2 сток на 3 */
-/* *,
-::after,
-::before {
-  box-sizing: content-box;
-} */
 body {
   min-height: 100vh;
   line-height: 1.5;
@@ -57,6 +51,7 @@ select {
   --grey: rgba(46, 47, 66, 0.7);
   --white: #fff;
   --dairy: #fcfcfc;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -175,15 +170,17 @@ body {
   color: var(--navy-blue);
   position: relative;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 .color-link-header:hover {
+  transition: var(--transition);
   color: var(--ocean);
 }
 .color-link-header:active,
 .color-link-header:focus {
   color: var(--ocean);
   outline: 2px solid transparent;
+  transition: color var(--transition);
 }
 .color-link-header::after {
   content: '';
@@ -218,6 +215,7 @@ body {
 .address-link:hover,
 .address-link:focus {
   color: var(--ocean);
+  transition: color var(--transition);
 }
 /* End of Header */
 /* region Hero */
@@ -226,12 +224,17 @@ body {
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
-  background-image:
-    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url('../images/people-office.jpg');
+  background-image: url('../images/people-office.jpg');
   background-size: cover;
   background-position: center;
   background-color: transparent;
+}
+.hero:hover,
+.hero:focus {
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url('../images/people-office.jpg');
+  transition: background-image var(--transition);
 }
 .button {
   /* display: block; */
@@ -252,6 +255,9 @@ body {
 .button:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: var(--ocean);
+  transition:
+    box-shadow var(--transition),
+    background var(--transition);
 }
 /* end of Hero */
 /* region Features */
@@ -283,6 +289,7 @@ body {
 }
 .h3-list-item {
   padding-bottom: 8px;
+  margin-top: 8px;
 }
 .svg-feature-background {
   background: var(--cloud);
@@ -314,6 +321,17 @@ body {
   flex-basis: calc((100% - 72px) / 4);
   border-radius: 0 0 4px 4px;
 }
+.team-background:hover,
+.team-background:focus {
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: var(--white);
+  transition:
+    box-shadow var(--transition),
+    background var(--transition);
+}
 .img-team {
   display: block;
 }
@@ -327,9 +345,9 @@ body {
 .social-link {
   display: flex;
   gap: 24px;
+  margin-top: 8px;
 }
 .team-svg-link {
-  background-color: var(--iris);
   fill: var(--white);
 }
 .team-svg-background {
@@ -340,6 +358,11 @@ body {
   height: 40px;
   background-color: var(--iris);
   border-radius: 50%;
+}
+.team-svg-background:hover,
+.team-svg-background:focus {
+  background-color: var(--green);
+  transition: background-color var(--transition);
 }
 /* end of Team  */
 /* region portfolio  */
@@ -380,10 +403,20 @@ body {
 .portfolio-list-item {
   flex-basis: calc((100% - 48px) / 3);
 }
+.portfolio-list-item:hover,
+.portfolio-list-item:focus {
+  box-shadow:
+    0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: var(--white);
+  transition:
+    box-shadow var(--transition),
+    background var(--transition);
+}
 .img-portfolio {
   display: block;
 }
-
 .card-content-portfolio {
   text-align: left;
 }
@@ -403,16 +436,25 @@ body {
   padding: 32px 16px;
 }
 /* end of portfolio   */
+/* region footer  */
 .footer {
   background-color: #2e2f42;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+.footer-box {
+  display: flex;
+  gap: 120px;
+}
+.margin-right {
+  margin-right: 120px;
 }
 .footer-desc {
   max-width: 264px;
 }
 .footer-link {
   text-decoration: none;
+  margin-top: 100px;
 }
 .footer-text {
   margin-top: 16px;
@@ -422,3 +464,35 @@ body {
 .color-white {
   color: var(--white);
 }
+.h3-footer-svg {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 100px;
+  margin-bottom: 16px;
+}
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.svg-footer {
+  background-color: var(--iris);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svg-footer:hover,
+.svg-footer:focus {
+  background-color: var(--green);
+  transition: background-color var(--transition);
+}
+.footer-svg-social {
+  fill: var(--white);
+}
+/* end of footer  */
