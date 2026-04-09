@@ -111,6 +111,10 @@ body {
 }
 .header {
   border-bottom: 1px solid #e7e9fc;
+  box-shadow:
+    0 1px 6px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .section-header {
   background-color: #fff;
@@ -121,6 +125,8 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   max-width: 1158px;
+  position: relative;
+  z-index: 1;
 }
 .header-box {
   display: flex;
@@ -130,6 +136,7 @@ body {
 .header-nav {
   display: flex;
 }
+/* Тут проблема може бути з відступами */
 .header-nav-list {
   margin-left: 76px;
   display: flex;
@@ -162,6 +169,7 @@ body {
   color: var(--iris);
 }
 .color-link-header {
+  /* transition: var(--transition); */
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -185,23 +193,27 @@ body {
 .color-link-header::after {
   content: '';
   position: absolute;
-  bottom: -4px;
+  bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 4px;
   background: var(--ocean);
-  transition: width 0.3s ease;
+  transition: width var(--transition);
 }
 .color-link-header:hover::after,
 .color-link-header:focus::after,
 .color-link-header.active::after {
   width: 100%;
 }
+.active {
+  color: var(--ocean);
+}
 .address-link-position {
   display: flex;
   gap: 40px;
 }
 .address-link {
+  transition: var(--transition);
   padding-bottom: 24px;
   padding-top: 24px;
   font-style: normal;
@@ -219,7 +231,17 @@ body {
 }
 /* End of Header */
 /* region Hero */
+.hero-wrapper {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
 .hero {
+  z-index: 1;
+  position: relative;
+  max-width: 1440px;
+  margin: auto;
   margin-top: 1px;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -228,16 +250,23 @@ body {
   background-size: cover;
   background-position: center;
   background-color: transparent;
+  background-repeat: no-repeat;
+  transition: var(--transition);
 }
-.hero:hover,
-.hero:focus {
-  background-image:
-    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url('../images/people-office.jpg');
-  transition: background-image var(--transition);
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(46, 47, 66, 0.7);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.hero:hover::before,
+.hero:focus::before {
+  opacity: 1;
+  transition: opacity var(--transition);
 }
 .button {
-  /* display: block; */
   margin: 48px auto 0 auto;
   border-radius: 4px;
   padding: 16px 32px;
@@ -250,14 +279,14 @@ body {
   letter-spacing: 0.04em;
   color: var(--white);
   border: none;
+  transition:
+    box-shadow var(--transition),
+    background-color var(--transition);
 }
 .button:hover,
 .button:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: var(--ocean);
-  transition:
-    box-shadow var(--transition),
-    background var(--transition);
 }
 /* end of Hero */
 /* region Features */
@@ -317,20 +346,13 @@ body {
   display: flex;
 }
 .team-background {
-  background: #ffffff;
   flex-basis: calc((100% - 72px) / 4);
   border-radius: 0 0 4px 4px;
-}
-.team-background:hover,
-.team-background:focus {
   box-shadow:
     0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
     0 1px 6px 0 rgba(46, 47, 66, 0.08);
   background: var(--white);
-  transition:
-    box-shadow var(--transition),
-    background var(--transition);
 }
 .img-team {
   display: block;
@@ -347,8 +369,13 @@ body {
   gap: 24px;
   margin-top: 8px;
 }
+/*  */
+.team-link {
+  display: flex;
+}
 .team-svg-link {
   fill: var(--white);
+  justify-content: center;
 }
 .team-svg-background {
   display: flex;
@@ -361,7 +388,7 @@ body {
 }
 .team-svg-background:hover,
 .team-svg-background:focus {
-  background-color: var(--green);
+  background-color: var(--ocean);
   transition: background-color var(--transition);
 }
 /* end of Team  */
@@ -402,6 +429,7 @@ body {
 }
 .portfolio-list-item {
   flex-basis: calc((100% - 48px) / 3);
+  transition: var(--transition);
 }
 .portfolio-list-item:hover,
 .portfolio-list-item:focus {
@@ -449,9 +477,8 @@ body {
   transform: translateY(100%);
   transition: transform var(--transition);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 24px 16px;
+  padding: 40px 32px;
 }
 .portfolio-overlay p {
   font-weight: 400;
@@ -459,9 +486,6 @@ body {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: var(--cloud);
-  text-align: center;
-  word-wrap: break-word;
-  padding-top: 40px;
 }
 .portfolio-list-item:hover .portfolio-overlay {
   transform: translateY(0);
@@ -478,15 +502,15 @@ body {
   display: flex;
   gap: 120px;
 }
-.margin-right {
+/* можливо знадобиться №  */
+/* .margin-right {
   margin-right: 120px;
-}
+} */
 .footer-desc {
   max-width: 264px;
 }
 .footer-link {
   text-decoration: none;
-  margin-top: 100px;
 }
 .footer-text {
   margin-top: 16px;
@@ -503,14 +527,17 @@ body {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: var(--white);
-  margin-top: 100px;
   margin-bottom: 16px;
 }
 .footer-social {
   display: flex;
   gap: 16px;
 }
+.footer-svg-link {
+  display: flex;
+}
 .svg-footer {
+  transition: var(--transition);
   background-color: var(--iris);
   width: 40px;
   height: 40px;
@@ -521,7 +548,7 @@ body {
 }
 .svg-footer:hover,
 .svg-footer:focus {
-  background-color: var(--green);
+  background-color: var(--ocean);
   transition: background-color var(--transition);
 }
 .footer-svg-social {
