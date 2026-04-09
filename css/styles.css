@@ -168,8 +168,7 @@ body {
   text-transform: uppercase;
   color: var(--iris);
 }
-.color-link-header {
-  /* transition: var(--transition); */
+.color-link-header-active {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -180,40 +179,78 @@ body {
   text-decoration: none;
   transition: color var(--transition);
 }
-.color-link-header:hover {
+.color-link-header-active:hover {
   transition: var(--transition);
   color: var(--ocean);
+  border-radius: 2px;
 }
-.color-link-header:active,
-.color-link-header:focus {
+.color-link-header-active:active,
+.color-link-header-active:focus {
   color: var(--ocean);
   outline: 2px solid transparent;
+  transition: color var(--transition);
+}
+.color-link-header-active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  border-radius: 2px;
+  height: 4px;
+  background: var(--ocean);
+  transition: opacity var(--transition);
+}
+.color-link-header-active:hover::after,
+.color-link-header-active:focus::after,
+.color-link-header-active.active::after {
+  opacity: 1;
+  transition: none;
+}
+.active {
+  color: var(--ocean);
+  border-radius: 2px;
+}
+.color-link-header {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+  position: relative;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.color-link-header:hover,
+.color-link-header:focus {
+  color: var(--ocean);
   transition: color var(--transition);
 }
 .color-link-header::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 4px;
+  border-radius: 2px;
   background: var(--ocean);
-  transition: width var(--transition);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
+
 .color-link-header:hover::after,
 .color-link-header:focus::after,
 .color-link-header.active::after {
-  width: 100%;
-}
-.active {
-  color: var(--ocean);
+  opacity: 1;
 }
 .address-link-position {
   display: flex;
   gap: 40px;
 }
 .address-link {
-  transition: var(--transition);
+  transition: color var(--transition);
   padding-bottom: 24px;
   padding-top: 24px;
   font-style: normal;
@@ -246,25 +283,12 @@ body {
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
-  background-image: url('../images/people-office.jpg');
+  background:
+    linear-gradient(rgba(46, 47, 66, 0.7)), url('../images/people-office.jpg');
   background-size: cover;
   background-position: center;
   background-color: transparent;
   background-repeat: no-repeat;
-  transition: var(--transition);
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(46, 47, 66, 0.7);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.hero:hover::before,
-.hero:focus::before {
-  opacity: 1;
-  transition: opacity var(--transition);
 }
 .button {
   margin: 48px auto 0 auto;
@@ -372,6 +396,13 @@ body {
 /*  */
 .team-link {
   display: flex;
+  background-color: var(--iris);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition);
 }
 .team-svg-link {
   fill: var(--white);
@@ -379,17 +410,12 @@ body {
 }
 .team-svg-background {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--iris);
-  border-radius: 50%;
 }
-.team-svg-background:hover,
-.team-svg-background:focus {
+.team-link:hover,
+.team-link:focus {
   background-color: var(--ocean);
   transition: background-color var(--transition);
+  border-radius: 50%;
 }
 /* end of Team  */
 /* region portfolio  */
@@ -429,7 +455,9 @@ body {
 }
 .portfolio-list-item {
   flex-basis: calc((100% - 48px) / 3);
-  transition: var(--transition);
+  transition:
+    box-shadow var(--transition),
+    background var(--transition);
 }
 .portfolio-list-item:hover,
 .portfolio-list-item:focus {
@@ -501,6 +529,7 @@ body {
 .footer-box {
   display: flex;
   gap: 120px;
+  align-items: baseline;
 }
 /* можливо знадобиться №  */
 /* .margin-right {
@@ -535,20 +564,21 @@ body {
 }
 .footer-svg-link {
   display: flex;
-}
-.svg-footer {
-  transition: var(--transition);
+  display: flex;
   background-color: var(--iris);
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition);
 }
-.svg-footer:hover,
-.svg-footer:focus {
-  background-color: var(--ocean);
+.svg-footer {
+  display: flex;
+}
+.footer-svg-link:hover,
+.footer-svg-link:focus {
+  background-color: var(--green);
   transition: background-color var(--transition);
 }
 .footer-svg-social {
