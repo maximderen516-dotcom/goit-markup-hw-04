@@ -179,16 +179,16 @@ body {
   text-decoration: none;
   transition: color var(--transition);
 }
-.color-link-header-active:hover {
+/* .color-link-header-active:hover {
   color: var(--ocean);
   border-radius: 2px;
-}
-.color-link-header-active:active,
+} */
+/* .color-link-header-active:active,
 .color-link-header-active:focus {
   color: var(--ocean);
   outline: 2px solid transparent;
   transition: color var(--transition);
-}
+} */
 .color-link-header-active::after {
   content: '';
   position: absolute;
@@ -200,11 +200,10 @@ body {
   background: var(--ocean);
   transition: opacity var(--transition);
 }
-.color-link-header-active:hover::after,
-.color-link-header-active:focus::after,
+/* .color-link-header-active:hover::after,
+.color-link-header-active:focus::after, */
 .color-link-header-active.active::after {
   opacity: 1;
-  transition: none;
 }
 .active {
   color: var(--ocean);
@@ -238,8 +237,8 @@ body {
   transition: opacity var(--transition);
 }
 
-.color-link-header:hover::after,
-.color-link-header:focus::after,
+/* .color-link-header:hover::after,
+.color-link-header:focus::after, */
 .color-link-header.active::after {
   opacity: 1;
 }
@@ -300,14 +299,11 @@ body {
   letter-spacing: 0.04em;
   color: var(--white);
   border: none;
-  transition:
-    box-shadow var(--transition),
-    background-color var(--transition);
+  transition: background-color var(--transition);
 }
 .button:hover,
 .button:focus {
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background: var(--ocean);
+  background-color: var(--ocean);
 }
 /* end of Hero */
 /* region Features */
@@ -508,7 +504,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--cloud);
 }
-.portfolio-image-container:hover .portfolio-overlay {
+.portfolio-list-item:hover .portfolio-overlay {
   transform: translateY(0);
 }
 /* end of portfolio   */
