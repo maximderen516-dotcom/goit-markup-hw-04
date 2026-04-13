@@ -180,7 +180,6 @@ body {
   transition: color var(--transition);
 }
 .color-link-header-active:hover {
-  transition: var(--transition);
   color: var(--ocean);
   border-radius: 2px;
 }
@@ -225,7 +224,6 @@ body {
 .color-link-header:hover,
 .color-link-header:focus {
   color: var(--ocean);
-  transition: color var(--transition);
 }
 .color-link-header::after {
   content: '';
@@ -264,7 +262,6 @@ body {
 .address-link:hover,
 .address-link:focus {
   color: var(--ocean);
-  transition: color var(--transition);
 }
 /* End of Header */
 /* region Hero */
@@ -405,7 +402,7 @@ body {
   transition: background-color var(--transition);
 }
 .team-svg-link {
-  fill: var(--white);
+  fill: #f4f4fd;
   justify-content: center;
 }
 .team-svg-background {
@@ -414,7 +411,6 @@ body {
 .team-link:hover,
 .team-link:focus {
   background-color: var(--ocean);
-  transition: background-color var(--transition);
   border-radius: 50%;
 }
 /* end of Team  */
@@ -466,9 +462,6 @@ body {
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
     0 1px 6px 0 rgba(46, 47, 66, 0.08);
   background: var(--white);
-  transition:
-    box-shadow var(--transition),
-    background var(--transition);
 }
 .img-portfolio {
   display: block;
@@ -515,9 +508,9 @@ body {
   letter-spacing: 0.02em;
   color: var(--cloud);
 }
-.portfolio-list-item:hover .portfolio-overlay {
+.portfolio-list-item:hover,
+.portfolio-overlay {
   transform: translateY(0);
-  transition: var(--transition);
 }
 /* end of portfolio   */
 /* region footer  */
@@ -549,7 +542,7 @@ body {
 .color-white {
   color: var(--white);
 }
-.h3-footer-svg {
+.p-footer-svg {
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 16px;
@@ -579,9 +572,8 @@ body {
 .footer-svg-link:hover,
 .footer-svg-link:focus {
   background-color: var(--green);
-  transition: background-color var(--transition);
 }
 .footer-svg-social {
-  fill: var(--white);
+  fill: #f4f4fd;
 }
 /* end of footer  */
