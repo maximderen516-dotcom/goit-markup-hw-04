@@ -508,8 +508,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--cloud);
 }
-.portfolio-list-item:hover,
-.portfolio-overlay {
+.portfolio-image-container:hover .portfolio-overlay {
   transform: translateY(0);
 }
 /* end of portfolio   */
